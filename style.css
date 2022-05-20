@@ -40,6 +40,7 @@ nav {
   position: -webkit-sticky; /* Necessçario para funcionar no Safari */
   position: sticky;
   top: 10px;
+  z-index: 5000;
 }
 nav div {
   position: relative;
@@ -232,7 +233,11 @@ nav ul ul li a {
     }
     main p {
       text-align: center;
-      width: auto;
+      width: 80% !important;
+    }
+    .nav-text {
+      opacity: 1 !important;
+      font-size: 1em !important;
     }
 }
 
@@ -362,14 +367,17 @@ main td {
 main th {
   text-align: center;
   color: white;
-  background-color: none;
+  background-color: #434C5E;
   font-weight: normal;
   text-align: center;
   padding: 10px;
   border: 1px solid #D8DEE9;
 }
-main tbody#detaque:hover, tr:hover {
-  background-color: #4c566a;
+main tbody tr:hover {
+  background-color: #434C5E;
+}
+main tr:nth-child(even){
+  background-color: #4C566A;
 }
 main pre {
   font-family: Fira Code;
@@ -395,6 +403,7 @@ footer {
   border-radius: 10px;
   padding: 0;
   margin: 10px;
+  margin-bottom: 25px;
   height: 100px;
   box-shadow: 10px 10px 5px #2E3440,
               10px 10px 5px #3B4252;
@@ -523,4 +532,42 @@ footer ul li a img {
 }
 .fa-circle-arrow-down {
   font-size: 25px;
+}
+
+.nav-text {
+  opacity: 0;
+  font-size: 0;
+  transition: 0.3s;
+}
+.active .nav-text {
+  opacity: 1;
+  font-size: 1em;
+}
+nav ul li:hover .nav-text {
+  opacity: 1;
+  font-size: 1em;
+}
+[aria-label] {
+	position: relative;
+}
+
+[aria-label]::after {
+	content: attr(aria-label);
+	display: none;
+	position: absolute;
+	top: 110%;
+	left: 0;
+	z-index: 5000;
+	pointer-events: none;
+	padding: 8px 10px;
+	text-decoration: none;
+	font-size: 1em;
+	color: #D8DEE9;
+	background-color: #3B4252;
+	border-radius: 10px;
+	border: 1px solid #D8DEE9;
+}
+
+[aria-label]:hover::after {
+	display: block;
 }

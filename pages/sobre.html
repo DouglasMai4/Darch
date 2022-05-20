@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,16 +10,12 @@
     <title>Sobre</title>
     <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../style.css">
+    <!-- FontAwesome --->
     <script src="https://kit.fontawesome.com/d6e6e589ec.js" crossorigin="anonymous"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VV8XB93HJE"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-VV8XB93HJE');
-    </script>
+    <!-- Comfortaa --->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
 </head>
 <body>
     <header id="top">
@@ -35,12 +30,12 @@
         </label>
         <input type="checkbox" id="btn">
         <ul>
-            <li><a href="../index.html">Início</a></li>
-            <li><a href="download.html">Download</a></li>
-            <li><a href="mirrorlist.html">Mirrorlist</a></li>
+            <li><a href="../index.html"><i class="fa-solid fa-house-chimney"></i><span class="nav-text"> Início</span></a></li>
+            <li><a href="download.html"><i class="fa-solid fa-cloud-arrow-down"></i><span class="nav-text"> Download</span></a></li>
+            <li><a href="mirrorlist.html"><i class="fa-solid fa-globe"></i><span class="nav-text"> Mirrorlist</span></a></li>
             <li>
                 <label for="btn2" class="show">Pacman <i class="fa-solid fa-circle-plus"></i></label>
-                <a href="pacman.html">Pacman</a>
+                <a href="pacman.html"><i class="fa-solid fa-ghost"></i><span span class="nav-text"> Pacman</span></a>
                 <input type="checkbox" id="btn2">
                 <ul>
                     <li><a href="pacman.html#utilizar">Como Utilizar</a></li>
@@ -49,7 +44,7 @@
             </li>
             <li>
                 <label for="btn3" class="show">Instalação <i class="fa-solid fa-circle-plus"></i></label>
-                <a href="instalacao.html">Instalação</a>
+                <a href="instalacao.html"><i class="fa-solid fa-download"></i><span class="nav-text"> Instalação</span></a>
                 <input type="checkbox" id="btn3">
                 <ul>
                     <li><a href="instalacao.html#particao">Partições</a></li>
@@ -60,10 +55,10 @@
                     <li><a class="last" href="instalacao.html#grub">Instalar GRUB</a></li>
                 </ul>
             </li>
-            <li><a href="posinstalacao.html">Pós Instalação</a></li>
+            <li><a href="posinstalacao.html"><i class="fa-solid fa-desktop"></i><span class="nav-text"> Pós Instalação</span></a></li>
             <li>
-                <label for="btn4" class="show-active">Interfaces Gráficas <i class="fa-solid fa-circle-plus"></i></label>
-                <a href="interface.html">Interfaces Gráficas</a>
+                <label for="btn4" class="show">Interfaces Gráficas <i class="fa-solid fa-circle-plus"></i></label>
+                <a href="interface.html"><i class="fa-solid fa-image"></i><span class="nav-text"> Interfaces Gráficas</span></a>
                 <input type="checkbox" id="btn4">
                 <ul>
                     <li><a href="interface.html#gnome">Gnome</a></li>
@@ -71,7 +66,7 @@
                     <li><a class="last" href="interface.html#xfce">XFCE</a></li>
                 </ul>
             </li>
-            <li><a class="active" href="#">Sobre</a></li>
+            <li><a class="active" href="#"><i class="fa-solid fa-circle-exclamation"></i><span class="nav-text"> Sobre</span></a></li>
         </ul>
     </nav>
 
@@ -90,10 +85,10 @@
 
     <footer>
         <ul>
-            <li><a href="https://github.com/douglasmai4" target="_blank" title="GitHub"><img src="../imgs/github.png" alt="GitHub"></a></li>
-            <li><a href="https://t.me/Douglas_Maia" target="_blank" title="Telegram"><img src="../imgs/telegram.png" alt="Telegram"></a></li>
-            <li><a href="mailto:douglasmai4@protonmail.com" target="_blank" title="Email"><img src="../imgs/email.png" alt="Email"></a></li>
-            <li><a href="https://www.instagram.com/douglas_mai4" target="_blank" title="Instagram"><img src="../imgs/instagram.png" alt="Instagram"></a></li>
+          <li><a href="https://github.com/douglasmai4" target="_blank" aria-label="GitHub"><img src="../imgs/github.png" alt="GitHub"></a></li>
+          <li><a href="https://t.me/Douglas_Maia" target="_blank" aria-label="Telegram"><img src="../imgs/telegram.png" alt="Telegram"></a></li>
+          <li><a href="mailto:douglasmai4@protonmail.com" target="_blank" aria-label="Email"><img src="../imgs/email.png" alt="Email"></a></li>
+          <li><a href="https://www.instagram.com/douglas_mai4" target="_blank" aria-label="Instagram"><img src="../imgs/instagram.png" alt="Instagram"></a></li>
         </ul>
     </footer>
 </body>
