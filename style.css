@@ -63,7 +63,7 @@ nav ul {
   margin-right: 1%;
 }
 nav ul li {
-  background-color: none;
+  background: none;
   float: left;
   margin: 0 5px;
 }
@@ -182,7 +182,7 @@ nav ul ul li a {
       width: 90.9%;
     }
     nav ul ul li {
-      background-color: none;
+      background: none;
       width: 100%;
     }
     nav ul ul a {
@@ -209,7 +209,7 @@ nav ul ul li a {
                   0 0 5px #434C5E;
     }
     nav .icon {
-      background-color: none;
+      background: none;
       color: #D8DEE9;
       cursor: pointer;
       display: block;
@@ -359,7 +359,7 @@ main table {
 }
 main td {
   color: #D8DEE9;
-  background-color: none;
+  background: none;
   padding: 10px;
   text-align: center;
   border: 1px solid #D8DEE9;
@@ -448,7 +448,7 @@ footer ul li a img {
               5px 5px 5px #3B4252;
 }
 .button_prox span {
-  background-color: none;
+  background: none;
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -494,7 +494,7 @@ footer ul li a img {
               5px 5px 5px #3B4252;
 }
 .button_ant span {
-  background-color: none;
+  background: none;
   cursor: pointer;
   display: inline-block;
   position: relative;
