@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mirrorlist</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- BoxIcons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles/bootstrap.css">
+    <link rel="stylesheet" href="../styles/style.css">
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-sm border border-light bg-dark shadow navbar-dark m-1 p-1 rounded nav-pills sticky-top box-shadow">
+      <a class="navbar-brand" href="#">DArch</a>
+      <button class="navbar-toggler m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="download.html">Download</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="mirror.html">Mirrorlist</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pacman</a>
+            <ul class="dropdown-menu bg-primary text-center">
+              <li><a class="dropdown-item" href="pacman.html#utilizar">Como Utilizar</a></li>
+              <li><a class="dropdown-item" href="pacman.html#repo">Repositórios</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Instalação</a>
+            <ul class="dropdown-menu bg-primary text-center">
+              <li><a class="dropdown-item" href="instalacao.html#particao">Partições</a></li>
+              <li><a class="dropdown-item" href="instalacao.html#particionar">Particionar</a></li>
+              <li><a class="dropdown-item" href="instalacao.html#formatar">Formatar</a></li>
+              <li><a class="dropdown-item" href="instalacao.html#base">Instalar Base</a></li>
+              <li><a class="dropdown-item" href="instalacao.html#so">Entrando SO</a></li>
+              <li><a class="dropdown-item" href="instalacao.html#grub">Instalar Grub</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="posinstalacao.html">Pós Instalação</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Interfaces</a>
+            <ul class="dropdown-menu bg-primary text-center">
+              <li><a class="dropdown-item" href="interfaces.html#gnome">Gnome</a></li>
+              <li><a class="dropdown-item" href="interfaces.html#plasma">Plasma</a></li>
+              <li><a class="dropdown-item" href="interfaces.html#xfce">Xfce</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sobre.html">Sobre</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Conteudo principal -->
+    <main class="bg-dark m-1 p-2 rounded text-center">
+      <h1>Mirrorlist</h1>
+      <div class="container">
+        <p>Mirrorlist é onde fica a localização dos servidores de onde serão baixados os pacotes instalados pelo <a href="pacman.html">pacman</a> podemos alteralo de forma bem simples, executando o comando como root:</p>
+
+        <code class="border border-light rounded p-1">nano /etc/pacman.d/mirrorlist</code>
+
+        <p class="m-1">Já iremos poder ver os servidores dos pacotes, para atualizar está lista podemos utilizar uma ferramenta do próprio site do Arch chamada <a href="https://archlinux.org/mirrorlist" target="_blank">Pacman Mirrorlist Generator</a>.</p>
+
+        <img src="../imgs/mirrorlist.png" class="img-fluid rounded" alt="Página simples com uma lista de países para selecionar de onde será gerada a lista de servidores para o pacman, abaixo da lista temos duas opições de protocolos para serem utilizados HTTP e HTTPS, abaixo detas opições temos também a opição para escolher qual a versão do IP desejamos utilizar, IPv4 ou/e IPv6, mais abaixo temos a opição de utilizar o mirror estatus, e o botão para nos levar à lista gerada." title="Pacman Mirrorlist Generator">
+
+        <p class="m-1">Após clicar em gerar lista você verá uma tela semelhante a esta:</p>
+
+        <img src="../imgs/mirror.png" class="img-fluid rounded" alt="Resultado gerado, uma lista com links e comentário informando que são do Brasil">
+
+        <p>Agora é somente copiar todas as linha e copialas para o arquivo /etc/pacman.d/mirrorlist, caso esteja na instalação do Arch e não possua interface gráfica você pode usar o lynx. Para isso execute o comando:</p>
+
+        <code class="border border-light rounded p-1">lynx https://archlinux.org/mirrorlist</code>
+
+        <p class="m-1">e selecione as opições como faria em qualquer navegador, após ter gerado a mirrolist, precione P no teclado, selecione a opição para salvar local, e mude o nome para um nome fácil para você lembrar depois, agora execute o seguinte comando como root:</p>
+
+        <code class="border border-light rounded p-1">cat NOME_DO_ARQUIVO > /etc/pacman.d/mirrolist</code>
+
+        <div class="card border-primary m-3" style="max-width: 20rem;">
+          <div class="card-header">Atenção</div>
+          <div class="card-body">
+            <h4 class="card-title">Descomente os servidores</h4>
+            <p class="card-text">Não se esqueça de descomentar os servidores, para que tudo funcione corretamente</p>
+          </div>
+        </div>
+
+        <p>Após ter modificado o arquivo MIRRORLIST, precisamos atualizar a lista de pacotes do Arch executando o seguinte comando como root:</p>
+
+        <code class="border border-light rounded p-1">pacman -Sy</code>
+
+        <p class="m-1">Se você fez corretamente tudo deve estar funcionando.</p>
+
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-outline-primary" onclick="window.location.href='download.html'">Anterior</button>
+          <button type="button" class="btn btn-outline-primary" onclick="window.location.href='pacman.html'">Próximo</button>
+        </div>
+      </div>
+
+      <!-- Notificação -->
+      <div class="toast show fixed-bottom m-2 shadow fade" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto">Observação</strong>
+          <button type="button" class="btn-close ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="toast-body bg-dark border border-secondary rounded-bottom">
+          Irei utilizar o nano como editor de texto, mas pode utilizar qual você preferir
+        </div>
+      </div>
+    </main>
+
+    <!-- Rodape -->
+    <footer class="bg-dark m-1 p-1 rounded text-center">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/DouglasMai4" target="_blank"><i style="font-size: 50px;" class='bx bxl-github'></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://t.me/Douglas_Maia" target="_blank"><i style="font-size: 50px;" class='bx bxl-telegram' ></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:douglasmai4@protonmail.com" target="_blank"><i style="font-size: 50px;" class='bx bxl-gmail' ></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://instagram.com/douglas_maia" target="_blank"><i style="font-size: 50px;" class='bx bxl-instagram'></i></a>
+        </li>
+      </ul>
+    </footer>
+
+  </body>
+</html>

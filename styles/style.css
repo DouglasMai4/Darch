@@ -1,0 +1,9 @@
+a {
+  color: var(--bs-pink);
+  text-decoration-color: var(--bs-white);
+}
+
+a:hover {
+  color: var(--bs-white);
+  text-decoration-color: var(--bs-pink);
+}
