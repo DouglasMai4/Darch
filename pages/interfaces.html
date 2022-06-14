@@ -12,11 +12,13 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/style.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
   </head>
   <body>
     <!-- NavBar -->
     <nav class="navbar navbar-expand-sm border border-light bg-dark shadow navbar-dark m-1 p-1 rounded nav-pills sticky-top shadow">
-      <a class="navbar-brand" href="#">DArch</a>
+      <img class="navbar-brand" style="width: 50px;" src="../imgs/logo.png">
       <button class="navbar-toggler m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -71,31 +73,95 @@
     <main class="bg-dark m-1 p-2 rounded text-center">
       <h1 id="gnome">Gnome</h1>
       <div class="container">
-        <code class="border border-light rounded p-1">pacman -S gdm</code><br /><br />
-
-        <code class="border border-light rounded p-1">systemctl enable gdm</code><br /><br />
-
-        <code class="border border-light rounded p-1">pacman -S gnome gnome-terminal nautilus gnome-tweaks gnome-control-center gnome-backgrounds adwaita-icon-theme</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">pacman -S gdm</code><br /><br />
+        </div>
+        <br />
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">systemctl enable gdm</code><br /><br />
+        </div>
+        <br />
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">pacman -S gnome gnome-terminal nautilus gnome-tweaks gnome-control-center gnome-backgrounds adwaita-icon-theme</code>
+        </div>
 
         <hr>
 
         <h1 id="plasma">Plasma</h1>
 
-        <code class="border border-light rounded p-1">pacman -S sddm</code><br /><br />
-
-        <code class="border border-light rounded p-1">systemctl enable sddm</code><br /><br />
-
-        <code class="border border-light rounded p-1">pacman -S plama konsole dolphin gwenview elisa dragonplayer ark kcalc kwrite</code><br /><br />
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">pacman -S sddm</code><br /><br />
+        </div>
+        <br />
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">systemctl enable sddm</code><br /><br />
+        </div>
+        <br />
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">pacman -S plama konsole dolphin gwenview elisa dragonplayer ark kcalc kwrite</code><br /><br />
+        </div>
 
         <hr>
 
         <h1 id="xfce">XFCE</h1>
 
-        <code class="border border-light rounded p-1">pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings</code><br /><br />
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings</code><br /><br />
+        </div>
+        <br />
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">systemctl enable lightdm</code><br /><br />
+        </div>
+        <br />
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">pacman -S xfce4 xfce4-goodies xfce4-terminal xfce4-whiskermenu-plugin</code><br /><br />
+        </div>
+        <br />
 
-        <code class="border border-light rounded p-1">systemctl enable lightdm</code><br /><br />
+        <!-- Corrosel de imagens -->
+        <div class="carousel slide" id="imgs" data-bs-ride="carousel">
+          <!-- Indicadores -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#imgs" data-bs-slide-to="0" class="active bg-primary"></button>
+            <button type="button" data-bs-target="#imgs" data-bs-slide-to="1" class="bg-primary"></button>
+            <button type="button" data-bs-target="#imgs" data-bs-slide-to="2" class="bg-primary"></button>
+          </div>
 
-        <code class="border border-light rounded p-1">pacman -S xfce4 xfce4-goodies xfce4-terminal xfce4-whiskermenu-plugin</code><br /><br />
+          <!-- Slide Carrosel -->
+          <div class="carousel-inner rounded">
+            <div class="carousel-item active">
+              <img src="../imgs/Carrosel/gnome.png" alt="" class="d-block w-100">
+              <div class="carousel-caption text-primary">
+                <h3>Gnome</h3>
+                <p>Interface GNOME sem modificações</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../imgs/Carrosel/plasma.png" alt="" class="d-block w-100">
+              <div class="carousel-caption text-primary">
+                <h3>Plasma</h3>
+                <p>Interface KDE Plasma com costumização</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../imgs/Carrosel/xfce.png" alt="" class="d-block w-100">
+              <div class="carousel-caption text-primary">
+                <h3>XFCE</h3>
+                <p>Interface XFCE com costumização</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controles Esquerda < /Direita > -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#imgs" data-bs-slide="prev">
+            <i class='bx bx-chevrons-left display-1 text-primary'></i>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#imgs" data-bs-slide="next">
+            <i class='bx bxs-chevrons-right display-1 text-primary'></i>
+          </button>
+        </div>
+
+        <br />
 
         <div class="btn-group" role="group" aria-label="Basic example">
           <button type="button" class="btn btn-outline-primary" onclick="window.location.href='posinstalacao.html'">Anterior</button>

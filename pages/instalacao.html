@@ -12,11 +12,13 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/style.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
   </head>
   <body>
     <!-- NavBar -->
     <nav class="navbar navbar-expand-sm border border-light bg-dark shadow navbar-dark m-1 p-1 rounded nav-pills sticky-top shadow">
-      <a class="navbar-brand" href="#">DArch</a>
+      <img class="navbar-brand" style="width: 50px;" src="../imgs/logo.png">
       <button class="navbar-toggler m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -73,25 +75,39 @@
       <div class="container">
         <p>Para começarmos devemos mudar o estilo de teclado desta forma:</p>
 
-        <code class="border border-light rounded p-1">loadkeys br-abnt2</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">loadkeys br-abnt2</code>
+        </div>
 
         <p class="m-1">Agora vamos nos conectar a internet, alguns tutoriais desatualizados mandam utilizar wifi-menu para se conectar ao WIFI mas o Arch não vem com ele instalado por padrão por isso iremos utilizar o IWD. Primeiro vamos entrar no <strong>IWD</strong>:</p>
 
-        <code class="border border-light rounded p-1">iwctl</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">iwctl</code>
+        </div>
 
         <p class="m-1">Agora vamos ver a lista de redes disponiveis executando o comando:</p>
 
-        <code class="border border-light rounded p-1">iwctl wlan0 get-networks</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">iwctl wlan0 get-networks</code>
+        </div>
 
         <p class="m-1">Vamos nos conectar a rede:</p>
 
-        <code class="border border-light rounded p-1">iwctl wlan0 connect NOME_DA_REDE</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">iwctl wlan0 connect NOME_DA_REDE</code>
+        </div>
 
         <p class="m-1">Vamos testar se a conexão está funcionando:</p>
 
-        <code class="border border-light rounded p-1">ping google.com</code><br /><br />
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">ping google.com</code><br /><br />
+        </div>
 
-        <mark class="bg-secondary rounded">Caso esteja conectado via cabo, ignore esta estapa</mark>
+        <br />
+
+        <div class="alert alert-warning">
+          <strong>Atenção!</strong><br>Caso esteja conectado via cabo, ignore esta estapa
+        </div>
 
         <hr>
 
@@ -99,13 +115,17 @@
 
         <p>Utilize o comando:</p>
 
-        <code class="border border-light rounded p-1">fdisk -l</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">fdisk -l</code>
+        </div>
 
         <p class="m-1">Para listar todos os dispositivos conectados, é importante identificar qual HD/SSD você deseja instalar o Arch, para exemplo vamos dizer que vamos usar o disco /dev/sda</p>
 
         <p>Agora acesse o seu disco utilizando:</p>
 
-        <code class="border border-light rounded p-1">fdisk /dev/sda</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">fdisk /dev/sda</code>
+        </div>
 
         <p class="m-1">Agora você pode digitar M para ver as opições disponiveis, neste caso queremos criar uma tabela GPT vazia então vamos digitar g, após isto digitamos W para salvar e sair, <strong>Lembrando que isto irá formatar o seu HD/SSD</strong></p>
 
@@ -115,7 +135,9 @@
 
         <p>Agora vamos particionar o HD/SSD, eu gosto de utilizar o CFDISK mas sinta-se a vontade para utilizar qualquer outro particionador. Utilize o comando para editar as partções no disco:</p>
 
-        <code class="border border-light rounded p-1">cfdisk /dev/sda</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">cfdisk /dev/sda</code>
+        </div>
 
         <p class="m-1">Agora crie as seguintes partições:</p>
 
@@ -142,25 +164,29 @@
 
         <p>Agora vamos formatar as partições criadas:</p>
 
-        <ol>
-          <li class="m-1">Boot: <code class="border border-light rounded p-1">mkfs.fat -F32 /dev/sd?</code></li>
-          <li class="m-1">/: <code class="border border-light rounded p-1">mkfs.ext4 /dev/sd?</code></li>
-          <li class="m-1">Home (Caso separado): <code class="border border-light rounded p-1">mkfs.ext4 /dev/sd?</code></li>
-          <li class="m-1">Swap: <code class="border border-light rounded p-1">mkswap /dev/sd?</code></li>
-        </ol>
+        <div class="d-flex justify-content-center">
+          <ol>
+            <li class="m-1">Boot: <code class="border border-light rounded p-1">mkfs.fat -F32 /dev/sd?</code></li>
+            <li class="m-1">/: <code class="border border-light rounded p-1">mkfs.ext4 /dev/sd?</code></li>
+            <li class="m-1">Home (Caso separado): <code class="border border-light rounded p-1">mkfs.ext4 /dev/sd?</code></li>
+            <li class="m-1">Swap: <code class="border border-light rounded p-1">mkswap /dev/sd?</code></li>
+          </ol>
+        </div>
 
         <p>Agora iremos montar as partições e criar alguns diretórios:</p>
 
-        <ol>
-          <li class="m-1">/: <code class="border border-light rounded p-1">mount /dev/sd? /mnt</code></li>
-          <li class="m-1">Diretório: <code class="border border-light rounded p-1">mkdir /mnt/home</code></li>
-          <li class="m-1">Home: <code class="border border-light rounded p-1">mount /dev/sd? /mnt/home</code></li>
-          <li class="m-1">Diretório: <code class="border border-light rounded p-1">mkdir /mnt/boot</code></li>
-          <li class="m-1">Caso use EFI: <code class="border border-light rounded p-1">mkdir /mnt/boot/efi</code></li>
-          <li class="m-1">Boot Legacy: <code class="border border-light rounded p-1">mount /dev/sd? /mnt/boot</code></li>
-          <li class="m-1">Boot EFI: <code class="border border-light rounded p-1">mount /dev/sd? /mnt/boot/efi</code></li>
-          <li class="m-1">Swap: <code class="border border-light rounded p-1">swapon /dev/sd?</code></li>
-        </ol>
+        <div class="d-flex justify-content-center">
+          <ol>
+            <li class="m-1">/:<code class="border border-light rounded p-1">mount /dev/sd? /mnt</code></li>
+            <li class="m-1">Diretório: <code class="border border-light rounded p-1">mkdir /mnt/home</code></li>
+            <li class="m-1">Home: <code class="border border-light rounded p-1">mount /dev/sd? /mnt/home</code></li>
+            <li class="m-1">Diretório: <code class="border border-light rounded p-1">mkdir /mnt/boot</code></li>
+            <li class="m-1">Caso use EFI: <code class="border border-light rounded p-1">mkdir /mnt/boot/efi</code></li>
+            <li class="m-1">Boot Legacy: <code class="border border-light rounded p-1">mount /dev/sd? /mnt/boot</code></li>
+            <li class="m-1">Boot EFI: <code class="border border-light rounded p-1">mount /dev/sd? /mnt/boot/efi</code></li>
+            <li class="m-1">Swap: <code class="border border-light rounded p-1">swapon /dev/sd?</code></li>
+          </ol>
+        </div>
 
         <hr>
 
@@ -168,15 +194,21 @@
 
         <p>Para instalar a base do sistema usamos o seguinte comando:</p>
 
-        <code class="border border-light rounded p-1">pacstrap /mnt base linux linux-firmware bash-completion</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">pacstrap /mnt base linux linux-firmware bash-completion</code>
+        </div>
 
         <p class="m-1">Agora vamos gerar o fstab:</p>
 
-        <code class="border border-light rounded p-1">genfstab -U -p /mnt >> /mnt/etc/fstab</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">genfstab -U -p /mnt >> /mnt/etc/fstab</code>
+        </div>
 
         <p class="m-1">Verifique se foi gerado corretamente:</p>
 
-        <code class="border border-light rounded p-1">cat /mnt/etc/fstab</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">cat /mnt/etc/fstab</code>
+        </div>
 
         <hr>
 
@@ -184,35 +216,51 @@
 
         <p>Para entrar no sitema use:</p>
 
-        <code class="border border-light rounded p-1">arch-chroot /mnt</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">arch-chroot /mnt</code>
+        </div>
 
         <p class="m-1">Você podera ver que seu terminal mudou isto indica que está dentro do sistema instalado. Vamos mudar a região do relógio para o horario de Brasilia:</p>
 
-        <code class="border border-light rounded p-1">ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime</code>
+        </div>
 
         <p class="m-1">Vamos mudar para o relógio UTC:</p>
 
-        <code class="border border-light rounded p-1">hwclock --systohc</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">hwclock --systohc</code>
+        </div>
 
         <p class="m-1">Instale um editor de texto de sua preferência neste caso vou usar o nano:</p>
 
-        <code class="border border-light rounded p-1">pacman -S nano</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">pacman -S nano</code>
+        </div>
 
         <p class="m-1">Para mudar o idioma do sistema descomente a linha que conter pt_BR.UTF-8 UTF-8 do arquivo /etc/locale.gen:</p>
 
-        <code class="border border-light rounded p-1">nano /etc/locale.gen</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">nano /etc/locale.gen</code>
+        </div>
 
         <p class="m-1">Agora vamos atualizar o idioma:</p>
 
-        <code class="border border-light rounded p-1">locale-gen</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">locale-gen</code>
+        </div>
 
         <p class="m-1">Vamos mudar a lingua padrão do sistema:</p>
 
-        <code class="border border-light rounded p-1">echo LANG=pt-BR.UTF-8 >> /etc/locale.conf</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">echo LANG=pt-BR.UTF-8 >> /etc/locale.conf</code>
+        </div>
 
         <p class="m-1">Mudar o layout do teclado:</p>
 
-        <code class="border border-light rounded p-1">echo KEYMAP=br-abnt2 >> /etc/vconsole.conf</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">echo KEYMAP=br-abnt2 >> /etc/vconsole.conf</code>
+        </div>
 
         <p class="m-1">Vamos mudar o nome do computador, para isso edite o arquivo /etc/hostname, depois edite o arquivo /etc/hosts e adicione as seguintes linhas:</p>
 
@@ -222,27 +270,39 @@ MEUHOSTNAME.localdomain MEUHOSTNAME</pre>
 
         <p>Vamos trocar a seha do root com:</p>
 
-        <code class="border border-light rounded p-1">passwd root</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">passwd root</code>
+        </div>
 
         <p class="m-1">Agora iremos adicionar um usuário:</p>
 
-        <code class="border border-light rounded p-1">useradd -m users -G whell NOME-USR</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">useradd -m users -G whell NOME-USR</code>
+        </div>
 
         <p class="m-1">Alterar senha do usuario:</p>
 
-        <code class="border border-light rounded p-1">passwd NOME-USR</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">passwd NOME-USR</code>
+        </div>
 
         <p class="m-1">Vamos instalar alguns pacotes nessesários:</p>
 
-        <code class="border border-light rounded p-1">pacman -S dosfstools os-prober mtools network-manager-applet networkmanager wpa_supplicant wireless_tools dialog iwd dhcpcd sudo</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">pacman -S dosfstools os-prober mtools network-manager-applet networkmanager wpa_supplicant wireless_tools dialog iwd dhcpcd sudo</code>
+        </div>
 
         <p class="m-1">Edite o arquivo /etc/sudoers. Procure pela linha que tenha:</p>
 
-        <code class="border border-light rounded p-1">root ALL=(ALL:ALL) ALL</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">root ALL=(ALL:ALL) ALL</code>
+        </div>
 
         <p class="m-1">Adicione abaixo dela:</p>
 
-        <code class="border border-light rounded p-1">NOME-USR ALL=(ALL:ALL) ALL</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">NOME-USR ALL=(ALL:ALL) ALL</code>
+        </div>
 
         <p class="m-1">Isto fará com que seu usuário possa usar o comando sudo</p>
 
@@ -251,42 +311,62 @@ MEUHOSTNAME.localdomain MEUHOSTNAME</pre>
         <h1 id="grub">Instalar o Grub</h1>
         <h2>Bios Legacy</h2>
 
-        <code class="border border-light rounded p-1">pacman -S grub</code><br /><br />
-
-        <code class="border border-light rounded p-1">grub-install --target=i386-pc --recheck /dev/sd?</code><br /><br />
-
-        <code class="border border-light rounded p-1">cp /usr/share/locale/en@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">pacman -S grub</code>
+        </div>
+        <br />
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">grub-install --target=i386-pc --recheck /dev/sd?</code>
+        </div>
+        <br />
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">cp /usr/share/locale/en@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo</code>
+        </div>
 
         <hr>
 
         <h2>EFI</h2>
 
-        <code class="border border-light rounded p-1">pacman -S grub-efi-x86_64 efibootmgr</code><br /><br />
-
-        <code class="border border-light rounded p-1">grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch --recheck</code><br /><br />
-
-        <code class="border border-light rounded p-1">cp /usr/share/locale/en@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">pacman -S grub-efi-x86_64 efibootmgr</code><br /><br />
+        </div>
+        <br />
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch --recheck</code><br /><br />
+        </div>
+        <br />
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">cp /usr/share/locale/en@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo</code>
+        </div>
 
         <hr>
 
         <p>Agora vamos gerar o arquivo de configuração do grub:</p>
 
-        <code class="border border-light rounded p-1">grub-mkconfig -o /boot/grub/grub.cfg</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">grub-mkconfig -o /boot/grub/grub.cfg</code>
+        </div>
 
         <p class="m-1">Antes de reiniciar vamos preparar algumas coisas:</p>
 
-        <ol type="I">
-          <li class="m-1">Habilitar NetworkManager: <code class="border border-light rounded p-1">systemctl enable NetworkManager</code></li>
-          <li class="m-1">Habilitar dhcpcd: <code class="border border-light rounded p-1">systemctl enable dhcpcd</code></li>
-        </ol>
+        <div class="d-flex justify-content-center">
+          <ol type="I">
+            <li class="m-1">Habilitar NetworkManager: <code class="border border-light rounded p-1">systemctl enable NetworkManager</code></li>
+            <li class="m-1">Habilitar dhcpcd: <code class="border border-light rounded p-1">systemctl enable dhcpcd</code></li>
+          </ol>
+        </div>
 
         <p>Agora digite o comando:</p>
 
-        <code class="border border-light rounded p-1">exit</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">exit</code>
+        </div>
 
         <p class="m-1">Para sair e use:</p>
 
-        <code class="border border-light rounded p-1">reboot</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">reboot</code>
+        </div>
 
         <p class="m-1">Para reiniciar e entrar no sistema instalado.</p>
 

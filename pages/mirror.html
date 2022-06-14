@@ -12,11 +12,13 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/style.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
   </head>
   <body>
     <!-- NavBar -->
     <nav class="navbar navbar-expand-sm border border-light bg-dark shadow navbar-dark m-1 p-1 rounded nav-pills sticky-top shadow">
-      <a class="navbar-brand" href="#">DArch</a>
+      <img class="navbar-brand" style="width: 50px;" src="../imgs/logo.png">
       <button class="navbar-toggler m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -73,7 +75,9 @@
       <div class="container">
         <p>Mirrorlist é onde fica a localização dos servidores de onde serão baixados os pacotes instalados pelo <a href="pacman.html">pacman</a> podemos alteralo de forma bem simples, executando o comando como root:</p>
 
-        <code class="border border-light rounded p-1">nano /etc/pacman.d/mirrorlist</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">nano /etc/pacman.d/mirrorlist</code>
+        </div>
 
         <p class="m-1">Já iremos poder ver os servidores dos pacotes, para atualizar está lista podemos utilizar uma ferramenta do próprio site do Arch chamada <a href="https://archlinux.org/mirrorlist" target="_blank">Pacman Mirrorlist Generator</a>.</p>
 
@@ -85,11 +89,15 @@
 
         <p>Agora é somente copiar todas as linha e copialas para o arquivo /etc/pacman.d/mirrorlist, caso esteja na instalação do Arch e não possua interface gráfica você pode usar o lynx. Para isso execute o comando:</p>
 
-        <code class="border border-light rounded p-1">lynx https://archlinux.org/mirrorlist</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">lynx https://archlinux.org/mirrorlist</code>
+        </div>
 
         <p class="m-1">e selecione as opições como faria em qualquer navegador, após ter gerado a mirrolist, precione P no teclado, selecione a opição para salvar local, e mude o nome para um nome fácil para você lembrar depois, agora execute o seguinte comando como root:</p>
 
-        <code class="border border-light rounded p-1">cat NOME_DO_ARQUIVO > /etc/pacman.d/mirrolist</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">cat NOME_DO_ARQUIVO > /etc/pacman.d/mirrolist</code>
+        </div>
 
         <div class="d-flex justify-content-center">
           <div class="card border-primary m-3" style="max-width: 20rem;">
@@ -103,7 +111,9 @@
 
         <p>Após ter modificado o arquivo MIRRORLIST, precisamos atualizar a lista de pacotes do Arch executando o seguinte comando como root:</p>
 
-        <code class="border border-light rounded p-1">pacman -Sy</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">pacman -Sy</code>
+        </div>
 
         <p class="m-1">Se você fez corretamente tudo deve estar funcionando.</p>
 

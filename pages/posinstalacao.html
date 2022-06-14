@@ -12,11 +12,13 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/style.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
   </head>
   <body>
     <!-- NavBar -->
     <nav class="navbar navbar-expand-sm border border-light bg-dark shadow navbar-dark m-1 p-1 rounded nav-pills sticky-top shadow">
-      <a class="navbar-brand" href="#">DArch</a>
+      <img class="navbar-brand" style="width: 50px;" src="../imgs/logo.png">
       <button class="navbar-toggler m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -73,7 +75,9 @@
       <div class="container">
         <p>Antes de usarmos o <strong>iwctl</strong>. Precisamos inicialo:</p>
 
-        <code class="border border-light rounded p-1">systemctl start iwd</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">systemctl start iwd</code>
+        </div>
 
         <p class="m-1">Agora podemos nos conectar como já haviamos feito antes com o iwctl</p>
 
@@ -83,11 +87,15 @@
 
         <p>Primeiro atualize a lista de pacotes:</p>
 
-        <code class="border border-light rounded p-1">pacman -Sy</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">pacman -Sy</code>
+        </div>
 
         <p class="m-1">Agora vamos instalar o xorg:</p>
 
-        <code class="border border-light rounded p-1">pacman -S xorg-server</code>
+        <div class="d-flex justify-content-center">
+          <code class="border border-light rounded p-1">pacman -S xorg-server</code>
+        </div>
 
         <p class="m-1">Lista dos drivers de vídeo das principais fabricantes, escolha o seu e instale usando o pacman</p>
 

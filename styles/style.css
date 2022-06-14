@@ -12,16 +12,3 @@ code {
   display: table;
   word-break: break-word;
 }
-
-.nav-link {
-  transition: 0.5s;
-}
-
-.text {
-  display: none;
-  transition: 1s;
-}
-
-.nav-link:hover .text {
-  display: inline-flex;
-}

@@ -12,11 +12,13 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/style.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
   </head>
   <body>
     <!-- NavBar -->
     <nav class="navbar navbar-expand-sm border border-light bg-dark shadow navbar-dark m-1 p-1 rounded nav-pills sticky-top shadow">
-      <a class="navbar-brand" href="#">DArch</a>
+      <img class="navbar-brand" style="width: 50px;" src="../imgs/logo.png">
       <button class="navbar-toggler m-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -69,14 +71,21 @@
 
     <!-- Conteudo principal -->
     <main class="bg-dark m-1 p-2 rounded text-center">
-      <h1>Douglas Maia</h1>
-      <div class="container">
-        <p>Me chamo Douglas Maia, estou no ultimo modulo do curso de Manutenção e Suporte em Informática no IFSC - Canoinhas. Este site foi feito para a matéria de Tecnologias para a Web, o seu intuito é auxiliar pessoas com pouca experiência à instalar o Arch Linux. Pretendo sempre manter o site atualizado e funcionando. Abaixo possuí alguns links para que possa entrar em contato comigo caso deseje.</p>
-
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-outline-primary" onclick="window.location.href='interfaces.html'">Anterior</button>
-          <button type="button" class="btn btn-outline-primary" onclick="window.location.href='../index.html'">Início</button>
+      <div class="container d-flex justify-content-center">
+        <div class="card" style="width:400px">
+          <img class="card-img-top" src="../imgs/foto.jpg" alt="Card image">
+          <div class="card-body">
+            <h4 class="card-title">Douglas Maia</h4>
+            <p class="card-text">Me chamo Douglas Maia, estou no ultimo modulo do curso de Manutenção e Suporte em Informática no IFSC - Canoinhas. Este site foi feito para a matéria de Tecnologias para a Web, o seu intuito é auxiliar pessoas com pouca experiência à instalar o Arch Linux. Pretendo sempre manter o site atualizado e funcionando. Abaixo possuí alguns links para que possa entrar em contato comigo caso deseje.</p>
+          </div>
         </div>
+      </div>
+
+      <br />
+
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-outline-primary" onclick="window.location.href='interfaces.html'">Anterior</button>
+        <button type="button" class="btn btn-outline-primary" onclick="window.location.href='../index.html'">Início</button>
       </div>
       <!-- Notificação
       <div class="toast show fixed-bottom m-2 shadow fade" role="alert" aria-live="assertive" aria-atomic="true">
